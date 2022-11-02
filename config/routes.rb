@@ -21,10 +21,13 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#googleAuth'
   get 'auth/failure', to: redirect('/')
 
+  delete 'logout', to: 'sessions#logout'
+
   get '/posts', to: 'posts#index', as: 'posts'
   post '/posts', to: 'posts#create', as: 'create_post'
   delete '/post/:id', to: 'posts#destroy', as: 'del_post'
   get '/post/:id', to: 'posts#edit', as: 'edit_post'
   put '/post/:id', to: 'posts#update', as: 'update_post'
   get '/posts/new', to: 'posts#new', as: 'new_post'
+  
 end
