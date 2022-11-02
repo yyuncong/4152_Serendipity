@@ -5,6 +5,7 @@
   <% if @current_user == nil %>
     <%= link_to "Log In with Google", '/auth/google_oauth2' , method: :post%>
   <% else %>
-    <%= link_to "Log out", logout_path, :method => :delete, :class => "btn btn-outline-secondary btn-lg px-4"%>
+    <%= link_to "Log out", logout_path, :method => :delete%>
+    <%= link_to "Go to Posts", posts_path, :method => :get%>
   <% end %>
 </body>
