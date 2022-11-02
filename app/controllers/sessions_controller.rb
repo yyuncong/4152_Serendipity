@@ -19,5 +19,10 @@ class SessionsController < ApplicationController
     def index
       render 'index'
     end
+
+    protected
+    def log_in(user)
+        session[:uid] = user.id
+    end
   
   end
