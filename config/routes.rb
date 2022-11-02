@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'posts/index'
+  get 'posts/show'
+  get 'posts/new'
+  get 'posts/create'
+  get 'posts/edit'
+  get 'posts/update'
+  get 'posts/destroy'
+  get 'posts/show'
+  get 'posts/new'
+  get 'posts/edit'
+  get 'posts/delete'
   get 'home/index'
 
   get 'home', to: 'home#index'
@@ -9,4 +20,11 @@ Rails.application.routes.draw do
   # Routes for Google authentication
   get 'auth/:provider/callback', to: 'sessions#googleAuth'
   get 'auth/failure', to: redirect('/')
+
+  get '/posts', to: 'posts#index', as: 'posts'
+  post '/posts', to: 'posts#create', as: 'create_post'
+  delete '/post/:id', to: 'posts#destroy', as: 'del_post'
+  get '/post/:id', to: 'posts#edit', as: 'edit_post'
+  put '/post/:id', to: 'posts#update', as: 'update_post'
+  get '/posts/new', to: 'posts#new', as: 'new_post'
 end
