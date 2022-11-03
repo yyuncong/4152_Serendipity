@@ -69,6 +69,8 @@ group :test do
   # Cucumber
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
+  
+  gem 'database_cleaner'
   gem 'simplecov'
 end
 
