@@ -4,6 +4,6 @@ Given /^"([^"]*)" is logged in$/ do |email|
   end
   
 Given /^I created a post with name "([^"]*)"$/ do |post_name|
-this_post=Post.create!(:title=>post_name,:content=>"#{post_name} content",:user_id =>1)
+  this_post=Post.create!(:user=>"Test User",:content=>post_name)
 end
 
