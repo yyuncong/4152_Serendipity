@@ -14,15 +14,6 @@ module NavigationHelpers
       case page_name
   
       when /^the home page$/ then '/'
-  
-      # Add more mappings here.
-      # Here is an example that pulls values out of the Regexp:
-      #
-      #   when /^(.*)'s profile page$/i
-      #     user_profile_path(User.find_by_login($1))
-      when /^the create profile page$/ then new_profile_path
-        
-      when /^the profile page$/ then '/profile'
         
       when /^the post page$/ then posts_path
   
