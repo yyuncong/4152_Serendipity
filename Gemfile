@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'cucumber'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use sqlite3 as the database for Active Record
@@ -68,6 +69,8 @@ group :test do
   # Cucumber
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels'
+  
+  gem 'database_cleaner'
   gem 'simplecov'
 end
 
