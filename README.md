@@ -42,7 +42,7 @@ cucumber features/login.feature
 cucumber features/post.feature
 ```
 ```sh
-bundle exec rake spec
+rspec
 ```
 
 ### Heroku Link
