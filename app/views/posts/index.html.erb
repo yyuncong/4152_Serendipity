@@ -1,0 +1,45 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+      .sign-google {
+          background: url('https://images.theconversation.com/files/93616/original/image-20150902-6700-t2axrz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1000&fit=clip') #f2f2f2;
+          background-position: -9px -7px;
+          background-repeat: no-repeat;
+          background-size: 37px 40px;
+          padding-left: 42px;
+          color: black;
+      }
+      .link{
+          color: black;
+          text-decoration: none;
+      }
+  </style>
+</head>
+<h1>Posts</h1>
+<div class="btn btn-primary">
+  <%= link_to "New Post", posts_new_path, :method => :get, :class => "link"%>
+</div>
+<table class="table table-striped col-md-12" id="post">
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Content</th>
+    <th>Last Updated Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @posts.each do |post| %>
+    <tr>
+      <td>
+        <%= post.user %>
+      </td>
+      <td>
+        <%= post.content %>
+      </td>
+      <td>
+        <%= post.updated_at %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
