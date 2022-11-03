@@ -38,11 +38,10 @@ rails server
 And then the project can be accessed through http://localhost:3000/
 #### 4. Run cucumber and RSpec tests 
 ```sh
-cucumber features/login.feature
-cucumber features/post.feature
+bundle exec cucumber features/
 ```
 ```sh
-rspec
+bundle exec rspec
 ```
 
 ### Heroku Link
