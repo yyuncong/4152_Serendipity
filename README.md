@@ -33,7 +33,7 @@ bundle exec rake db:seed
 ```
 #### 3. Start the server
 ```sh
-rails server
+rails server -b 0.0.0.0
 ```
 And then the project can be accessed through http://localhost:3000/
 #### 4. Run cucumber and RSpec tests 
