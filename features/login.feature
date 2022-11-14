@@ -12,4 +12,4 @@ Scenario: Logout
   And I should see "Log out"
   Then I follow "Log out"
   And I should see "Serendipity"
-  And I should see "Log in with Google"   
+  And I should see "Log In with Google"   
