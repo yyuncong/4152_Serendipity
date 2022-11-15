@@ -5,6 +5,10 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @comments = Comment.where("post_id = '#{params[:id]}'")
+    puts @post
+    puts @comments.length
   end
 
   def new
@@ -20,6 +24,11 @@ class PostsController < ApplicationController
   end
 
   def update
+    @comment = Comment.create!(comment_params.merge({post_id: params[:id]}))
+    @post = Post.find(params[:id])
+    @comments = Comment.where("post_id = '#{params[:id]}'")
+
+    redirect_to show_post_path(@post)
   end
 
   def destroy
@@ -29,5 +38,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:user, :content)
+  end
+
+  def comment_params
+    params.require(:comment).permit(:user, :content)
   end
 end
