@@ -1,2 +1,69 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+      .post_user{
+          font-family: "Sans-serif", "Arial", monospace;
+          font-weight: bold;
+          font-size: 20px;
+          padding-top:10px;
+      }
+      .post_content{
+          font-family: "Sans-serif", "Arial", monospace;
+          font-size: 20px;
+      }
+      .comments_section_title{
+          font-family: "Sans-serif", "Arial", monospace;
+          font-weight: bold;
+          font-size: 20px;
+          padding-top:10px;
+      }
+
+  </style>
+</head>
+<h1>Post</h1>
+<p class="post_user">
+  <%= @post.user + " says"%>
+</p>
+<p class="post_content">
+  <%= @post.content %>
+</p>
+<p class="comments_section_title">
+Comments
+</p>
+
+<table class="table table-striped col-md-12" id="post">
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Content</th>
+    <th>Last Updated Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @comments.each do |comment| %>
+    <tr>
+      <td>
+        <%= comment.user %>
+      </td>
+      <td>
+        <%= comment.content %>
+      </td>
+      <td>
+        <%= comment.updated_at %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<p class="comments_section_title">
+  Leave Your Comment
+</p>
+<%= form_tag update_post_path(@post.id), :class => 'form' do %>
+  <%= label :comment, :user, 'User', :class => 'col-form-label' %>
+  <%= text_field :comment, :user, :class => 'form-control' %>
+  <br/>
+  <%= label :comment, :content, 'Content', :class => 'col-form-label' %>
+  <%= text_field :comment, :content, :class => 'form-control' %>
+  <br/>
+  <%= submit_tag 'Comment', :class => 'btn btn-primary' %>
+<% end %>
