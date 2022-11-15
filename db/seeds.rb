@@ -12,6 +12,15 @@ posts = [{:user => 'Robert', :content => 'A post by Robert'},
          {:user => 'Dwight', :content => 'A post by Dwight'}
 ]
 
+comments = [{:post_id => 1, :user => 'Anna', :content => 'Robert, cannot agree more about that'},
+            {:post_id => 1, :user => 'Evelyn', :content => '+1'},
+            {:post_id => 1, :user => 'Johnson', :content => 'LOL'}
+            ]
+
 posts.each do |post|
   Post.create!(post)
+end
+
+comments.each do |comment|
+  Comment.create!(comment)
 end

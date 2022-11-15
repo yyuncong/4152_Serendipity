@@ -13,12 +13,26 @@
           color: black;
           text-decoration: none;
       }
+      .new_post{
+          font-family: "Sans-serif", "Arial", monospace;
+          font-weight: bold;
+          font-size: 20px;
+          padding-top:10px;
+      }
+      #post {
+          margin-top:30px;
+          margin-bottom:30px;
+      }
   </style>
 </head>
 <h1>Posts</h1>
+<p class="new_post">
+  Create A New Post
+</p>
 <div class="btn btn-primary">
   <%= link_to "New Post", posts_new_path, :method => :get, :class => "link"%>
 </div>
+<br/>
 <table class="table table-striped col-md-12" id="post">
   <thead>
   <tr>
@@ -34,7 +48,7 @@
         <%= post.user %>
       </td>
       <td>
-        <%= post.content %>
+        <%= link_to post.content, show_post_path(post), :method => :get, :class => "link" %>
       </td>
       <td>
         <%= post.updated_at %>
