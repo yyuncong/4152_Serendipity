@@ -7,5 +7,6 @@
   <% else %>
     <%= link_to "Log out", logout_path, :method => :delete%>
     <%= link_to "Go to Posts", posts_path, :method => :get%>
+    <%= link_to "My Profile", profile_path, :method => :get, :class => "link"%>
   <% end %>
 </body>
