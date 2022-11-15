@@ -13,8 +13,6 @@
   <%= link_to "Go Back", posts_path, :method => :get, :class => "link"%>
 </div>
 <%= form_tag posts_path, :class => 'form' do %>
-  <%= label :post, :user, 'User', :class => 'col-form-label' %>
-  <%= text_field :post, :user, :class => 'form-control' %>
   <br/>
   <%= label :post, :content, 'Content', :class => 'col-form-label' %>
   <%= text_field :post, :content, :class => 'form-control' %>

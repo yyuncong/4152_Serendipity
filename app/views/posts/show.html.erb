@@ -66,8 +66,6 @@ Comments
   Leave Your Comment
 </p>
 <%= form_tag update_post_path(@post.id), :class => 'form' do %>
-  <%= label :comment, :user, 'User', :class => 'col-form-label' %>
-  <%= text_field :comment, :user, :class => 'form-control' %>
   <br/>
   <%= label :comment, :content, 'Content', :class => 'col-form-label' %>
   <%= text_field :comment, :content, :class => 'form-control' %>
