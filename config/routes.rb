@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   # Google authentications routes
   root :to => 'sessions#index'
   # Routes for Google authentication
-  get 'auth/:provider/callback', to: 'sessions#googleAuth'
-  get 'auth/failure', to: redirect('/')
+  get '/auth/:provider/callback', to: 'sessions#googleAuth'
+  get '/auth/failure', to: redirect('/')
 
   delete 'logout', to: 'sessions#logout'
 
@@ -30,4 +30,9 @@ Rails.application.routes.draw do
   put '/post/:id', to: 'posts#update', as: 'update_post'
   get '/posts/new', to: 'posts#new', as: 'new_post'
   
+  # /profiles
+  get '/profile', to: 'profiles#show', as: 'profile'
+  get '/profile/new', to: 'profiles#new', as: 'new_profile'
+  post '/profile', to: 'profiles#create'
+  put '/profile/:id', to: 'profiles#update', as: 'put_profile'
 end
