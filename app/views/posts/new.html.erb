@@ -1,7 +1,17 @@
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+      .link{
+          color: black;
+          text-decoration: none;
+      }
+
+  </style>
 </head>
 <h1>Create a new post</h1>
+<div class="btn btn-primary">
+  <%= link_to "Go Back", posts_path, :method => :get, :class => "link"%>
+</div>
 <%= form_tag posts_path, :class => 'form' do %>
   <%= label :post, :user, 'User', :class => 'col-form-label' %>
   <%= text_field :post, :user, :class => 'form-control' %>
@@ -9,5 +19,5 @@
   <%= label :post, :content, 'Content', :class => 'col-form-label' %>
   <%= text_field :post, :content, :class => 'form-control' %>
   <br/>
-  <%= submit_tag 'Post', :class => 'btn btn-primary' %>
+  <%= submit_tag 'Post', :class => 'btn btn-primary link' %>
 <% end %>

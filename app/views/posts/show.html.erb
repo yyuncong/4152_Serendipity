@@ -7,6 +7,10 @@
           font-size: 20px;
           padding-top:10px;
       }
+      .link{
+          color: black;
+          text-decoration: none;
+      }
       .post_content{
           font-family: "Sans-serif", "Arial", monospace;
           font-size: 20px;
@@ -21,6 +25,9 @@
   </style>
 </head>
 <h1>Post</h1>
+<div class="btn btn-primary">
+  <%= link_to "Go Back", posts_path, :method => :get, :class => "link"%>
+</div>
 <p class="post_user">
   <%= @post.user + " says"%>
 </p>
@@ -65,5 +72,5 @@ Comments
   <%= label :comment, :content, 'Content', :class => 'col-form-label' %>
   <%= text_field :comment, :content, :class => 'form-control' %>
   <br/>
-  <%= submit_tag 'Comment', :class => 'btn btn-primary' %>
+  <%= submit_tag 'Comment', :class => 'btn btn-primary link' %>
 <% end %>
