@@ -4,6 +4,7 @@ Scenario: make new post
   Given "test@columbia.edu" is logged in
   
   When I am on the home page
+  And I should see "Go to Posts"
   And I follow "Go to Posts"
   Then I should see "Posts"
   And I should see "New Post"

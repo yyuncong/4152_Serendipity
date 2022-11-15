@@ -1,6 +1,6 @@
 Feature: I would like to sign in with Google and log out
  
-Scenario: Login to Serendipity home page 
+Scenario: Login to Serendipity for the first time
   When I am on the home page
   Then I should see "Serendipity"
   And I should see "Log In with Google"  
