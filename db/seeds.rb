@@ -15,7 +15,24 @@ posts = [{:user_id => 30, :user => 'Robert', :content => 'A post by Robert'},
 comments = [{:user_id => 40, :post_id => 1, :user => 'Anna', :content => 'Robert, cannot agree more about that'},
             {:user_id => 50, :post_id => 1, :user => 'Evelyn', :content => '+1'},
             {:user_id => 60, :post_id => 1, :user => 'Johnson', :content => 'LOL'}
-            ]
+]
+
+profiles = [{:user_id => 30, :bio => 'Bio of Robert'},
+            {:user_id => 40, :bio => 'Bio of Anna'},
+            {:user_id => 50, :bio => 'Bio of Evelyn'},
+            {:user_id => 60, :bio => 'Bio of Johnson'},
+            {:user_id => 70, :bio => 'Bio of Dwight'}
+]
+
+users = [{:id => 30, :name => 'Robert', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+         {:id => 40, :name => 'Anna', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+         {:id => 50, :name => 'Evelyn', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+         {:id => 60, :name => 'Johnson', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+         {:id => 70, :name => 'Dwight', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+]
+users.each do |user|
+  User.create!(user)
+end
 
 posts.each do |post|
   Post.create!(post)
@@ -24,3 +41,10 @@ end
 comments.each do |comment|
   Comment.create!(comment)
 end
+
+profiles.each do |profile|
+  Profile.create!(profile)
+end
+
+
+

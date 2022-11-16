@@ -1,0 +1,54 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+      .post_user{
+          font-family: "Sans-serif", "Arial", monospace;
+          font-weight: bold;
+          font-size: 20px;
+          padding-top:10px;
+      }
+      .link{
+          color: black;
+          text-decoration: none;
+      }
+      .post_content{
+          font-family: "Sans-serif", "Arial", monospace;
+          font-size: 20px;
+      }
+      .comments_section_title{
+          font-family: "Sans-serif", "Arial", monospace;
+          font-weight: bold;
+          font-size: 20px;
+          padding-top:10px;
+      }
+
+  </style>
+</head>
+<h1><%= @user.name + "'s profile page" %></h1>
+<div class="btn btn-primary">
+  <%= link_to "Go Back", posts_path, :method => :get, :class => "link"%>
+</div>
+<p class="comments_section_title">
+  Posts
+</p>
+
+<table class="table table-striped col-md-12" id="post">
+  <thead>
+  <tr>
+    <th>Content</th>
+    <th>Last Updated Time</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @posts.each do |post| %>
+    <tr>
+      <td>
+        <%= post.content %>
+      </td>
+      <td>
+        <%= post.updated_at %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

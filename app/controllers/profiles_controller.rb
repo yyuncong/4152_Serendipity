@@ -25,6 +25,12 @@ class ProfilesController < SessionsController
     @profile = Profile.find_by_user_id(@current_user.id)
   end
 
+  def display
+    @profile = Profile.find_by_user_id(params[:id])
+    @user = User.find(params[:id])
+    @posts = Post.where("user_id = '#{params[:id]}'")
+  end
+
   def profile_info
     params.require(:profile).permit(:bio)
   end
