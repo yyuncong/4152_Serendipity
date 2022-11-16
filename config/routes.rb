@@ -35,4 +35,5 @@ Rails.application.routes.draw do
   get '/profile/new', to: 'profiles#new', as: 'new_profile'
   post '/profile', to: 'profiles#create'
   put '/profile/:id', to: 'profiles#update', as: 'put_profile'
+  get '/profile/:id', to: 'profiles#display', as: 'display_profile'
 end
