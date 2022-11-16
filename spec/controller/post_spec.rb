@@ -7,8 +7,8 @@ describe PostsController, :type => :controller do
     
   before :each do
     @user = User.create!(:name => 't1', :email => 't1@columbia.edu' )
-    @test_post = Post.create!(:user_id => @user.id, :title => 'test_post', :content => 'hello', start: "01/01/2022", end: "01/02/3022", low_number: 1, high_number: 3)
-    Group.create!(post_id: @test_post.id)
+    @test_post = Post.create!(:user_id => @user.id, :content => 'hello')
+    #Group.create!(post_id: @test_post.id)
   end
   
   describe "all posts"do 
@@ -45,7 +45,7 @@ describe PostsController, :type => :controller do
   
    describe "create new post" do 
       it "successfully create" do              
-          post :create, params: {post: {title: "test",content: "test", start: "01/01/2022", end: "01/02/3022", low_number: 1, high_number: 3},id: 3,user_id:@user.id}
+          post :create, params: {post: {content: "test"},id: 3,user_id:@user.id}
           expect(response).to redirect_to(posts_path)              
       end
    end
@@ -60,14 +60,14 @@ describe PostsController, :type => :controller do
   
   describe "find all applied user" do
     it "find things" do
-      test_post = Post.create(:user_id => @user.id, :title => 'test_post', :content => 'hello', start: "01/01/2022", end: "01/02/3022", low_number: 1, high_number: 3)
-      test_group=Group.create(:post_id=>test_post.id)
+      test_post = Post.create(:user_id => @user.id,  :content => 'hello')
+      #test_group=Group.create(:post_id=>test_post.id)
       test_user1=User.create(:name => 'test_user1', :email => 't1@columbia.edu')
       test_user2=User.create(:name => 'test_user2', :email => 't1@columbia.edu')
       test_user3=User.create(:name => 'test_user3', :email => 't1@columbia.edu')
-      test_gu1=GroupUser.create(:group_id=>test_group.id, :user_id=>test_user1.id, :status=>"applied")
-      test_gu2=GroupUser.create(:group_id=>test_group.id, :user_id=>test_user2.id, :status=>"applied")
-      test_gu3=GroupUser.create(:group_id=>test_group.id, :user_id=>test_user3.id, :status=>"approved")
+      #test_gu1=GroupUser.create(:group_id=>test_group.id, :user_id=>test_user1.id, :status=>"applied")
+      #test_gu2=GroupUser.create(:group_id=>test_group.id, :user_id=>test_user2.id, :status=>"applied")
+      #test_gu3=GroupUser.create(:group_id=>test_group.id, :user_id=>test_user3.id, :status=>"approved")
       post :show, params: {id: test_post.id}
       expect (controller.instance_eval{@all_applied_user}.count)==2
        expect (controller.instance_eval{@all_approved_user}.count)==1
@@ -77,9 +77,8 @@ describe PostsController, :type => :controller do
 
   describe "visit a specific post" do
     it 'shows comments' do
-      @test_group = Group.create!(post_id: @test_post.id)
-      @test_comment = Comment.create(post_id: @test_post.id, :content => 'test comment', :from_user_id => @user.id, :to_user_id => nil, 
-        :to_comment_id => nil, :is_public => true)
+      #@test_group = Group.create!(post_id: @test_post.id)
+      @test_comment = Comment.create(post_id: @test_post.id, :content => 'test comment')
       get :show, params: {id: @test_post.id}
       expect(response.body).to include 'test comment'
     end
