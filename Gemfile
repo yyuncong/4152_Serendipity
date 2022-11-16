@@ -49,6 +49,7 @@ group :development, :test do
   # rspec
   gem 'rspec-rails'
   gem 'ZenTest'
+  gem 'factory_girl_rails', '~> 4.5'
 end
 
 group :development do
@@ -78,6 +79,8 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+
 
 gem 'rails-controller-testing'
 

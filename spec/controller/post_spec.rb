@@ -8,6 +8,7 @@ describe PostsController, :type => :controller do
   before :each do
     @user = User.create!(:name => 't1', :email => 't1@columbia.edu' )
     @test_post = Post.create!(:user_id => @user.id, :content => 'hello')
+    
     #Group.create!(post_id: @test_post.id)
   end
   
@@ -29,6 +30,8 @@ describe PostsController, :type => :controller do
   
   describe "test update post" do
     it 'calls the model method that update profile' do
+      get :index
+      
       url = "/post/#{@test_post.id}"
       put :update, params: { post: {title: "Edit Post"}, id: @test_post.id}
       new_post = Post.find_by_id(@test_post.id)
