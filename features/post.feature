@@ -31,3 +31,12 @@ Scenario: Create new post, and review the post in my profile
   And I should see "Last Updated Time"
   And I should see "Test Post"
 
+  Then I follow "Go Back"
+  And I should be on the post page
+
+ Scenario: Stop creating new post and go back to home page 
+  Give I am on the post page
+  And I follow "New Post"
+  Then I should see "Create a new post"
+  And I follow "Go Back"
+  Then I should be on the post page

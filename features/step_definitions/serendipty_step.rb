@@ -8,6 +8,6 @@ Given /^I created a post with name "([^"]*)"$/ do |post_name|
 end
 
 Given /^Post with name "([^"]*)" is created by "([^"]*)"$/ do |post_name, user_name|
-  this_user=User.create!(:name=>user_name, :email => "test_email")
+  this_user=User.create!(:name=>user_name, :email => "TestUser@columbia.edu")
   this_post=Post.create!(:user=>user_name,:content=>post_name)
 end
