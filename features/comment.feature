@@ -3,6 +3,7 @@ Background: Test user has created a test post
   Given "TestUser@columbia.edu" is logged in
   When I am on the new profile page
   And I press "Continue"
+  Then I should be on the home page
   And I follow "Go to Posts"
   Then I follow "New Post"
   And I should see "Create a new post"
@@ -17,6 +18,5 @@ Scenario: Leave a comment on test post
   And I should see "Comments"   
   Then I should see "Leave Your Comment"
   And I fill in "Content" with "+1"
-  
   And I press "Comment" 
   And I should see "+1"

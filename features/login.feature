@@ -17,7 +17,9 @@ Scenario: Complete profile, change bio, and log out
   And I should see "Log out"
   And I should see "Go to Posts"
   And I should see "My Profile"
+
   Then I follow "My Profile"
+  And I should be on the profile page
   And I should see "Bio"
 
   And I fill in "Bio" with "This is my new bio"

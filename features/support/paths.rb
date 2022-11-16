@@ -15,7 +15,9 @@ module NavigationHelpers
   
       when /^the home page$/ then '/'
 
-      when /^the new porfile page$/ then '/profile/new'  
+      when /^the new porfile page$/ then '/profile/new' 
+        
+      when /^the profile page$/ then '/profile'
         
       when /^the post page$/ then posts_path
   

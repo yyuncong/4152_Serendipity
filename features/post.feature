@@ -30,3 +30,4 @@ Scenario: Create new post, and review the post in my profile
   And I should see "Content"
   And I should see "Last Updated Time"
   And I should see "Test Post"
+
