@@ -1,0 +1,26 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+      .link{
+          color: black;
+          text-decoration: none;
+      }
+
+  </style>
+</head>
+<h1>Complete Your Profile</h1>
+<div class="btn btn-primary">
+  <%= link_to "Go Back", root_path, :method => :get, :class => "link"%>
+</div>
+<%= form_tag put_profile_path(@profile), :method => :put, :class => 'form' do %>
+  <%= label nil, nil, 'Name', :class => 'col-form-label' %>
+  <%= text_field nil, nil, :value => @current_user.name, :disabled => true, :class => 'form-control' %>
+  <br/>
+  <%= label nil, nil, 'Email', :class => 'col-form-label' %>
+  <%= text_field nil, nil, :value => @current_user.email, :disabled => true, :class => 'form-control' %>
+  <br/>
+  <%= label :profile, :bio, 'Bio' , :class=> 'control-label' %>
+  <%= text_field :profile, :bio, :value=> @profile.bio, :class => 'form-control' %>
+  <br/>
+  <%= submit_tag 'Save', :class => 'btn btn-primary link' %>
+<% end %>

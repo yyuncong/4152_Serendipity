@@ -14,9 +14,12 @@ class SessionsController < ApplicationController
         User.transaction do
           user.save!
         end
-        # User.connection.commit_db_transaction
         log_in(user)
-        redirect_to root_path
+        if Profile.where(user_id: user.id).length == 0
+          redirect_to new_profile_path
+        else
+          redirect_to root_path
+        end
     end
     
     def logout
@@ -26,16 +29,29 @@ class SessionsController < ApplicationController
     end 
       
     def index
-      if session[:uid]!=nil 
+      if session[:uid] != nil 
         @current_user = User.find(session[:uid])       
       else
-        @current_user=nil    
+        @current_user = nil    
       end
     end
 
     protected
     def log_in(user)
         session[:uid] = user.id
+    end
+
+    protected
+    def check_current_user
+      if Rails.env.test?  
+        @current_user = User.find(1)
+      else 
+        if session[:uid] == nil
+          flash[:msg] = "Please log in"
+          redirect_to root_path
+        end
+        @current_user = User.find(session[:uid])
+      end
     end
   
   end

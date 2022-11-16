@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+      .link{
+          color: black;
+          text-decoration: none;
+      }
+
+  </style>
+</head>
+<h1>Complete Your Profile</h1>
+<%= form_tag profile_path, :class => 'form' do %>
+  <%= label nil, nil, 'Name', :class => 'col-form-label' %>
+  <%= text_field nil, nil, :value => @current_user.name, :disabled => true, :class => 'form-control' %>
+  <br/>
+  <%= label nil, nil, 'Email', :class => 'col-form-label' %>
+  <%= text_field nil, nil, :value => @current_user.email, :disabled => true, :class => 'form-control' %>
+  <br/>
+  <%= label :profile, :bio, 'Bio', :class => 'col-form-label' %>
+  <%= text_field :profile, :bio, :class => 'form-control' %>
+  <br/>
+  <%= submit_tag 'Continue', :class => 'btn btn-primary link' %>
+<% end %>

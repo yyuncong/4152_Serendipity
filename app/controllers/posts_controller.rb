@@ -7,15 +7,15 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = Comment.where("post_id = '#{params[:id]}'")
-    puts @post
-    puts @comments.length
+    @user = User.find(session[:uid])
   end
 
   def new
   end
 
   def create
-    @post = Post.create!(post_params)
+    @user = User.find(session[:uid])
+    @post = Post.create!(post_params.merge({user_id: session[:uid], user: @user[:name]}))
     flash[:notice] = "#{@post.user} just posted."
     redirect_to posts_path
   end
@@ -24,7 +24,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    @comment = Comment.create!(comment_params.merge({post_id: params[:id]}))
+    @user = User.find(session[:uid])
+    @comment = Comment.create!(comment_params.merge({user_id: session[:uid], user: @user[:name], post_id: params[:id]}))
     @post = Post.find(params[:id])
     @comments = Comment.where("post_id = '#{params[:id]}'")
 
@@ -37,10 +38,10 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:user, :content)
+    params.require(:post).permit(:content)
   end
 
   def comment_params
-    params.require(:comment).permit(:user, :content)
+    params.require(:comment).permit(:content)
   end
 end

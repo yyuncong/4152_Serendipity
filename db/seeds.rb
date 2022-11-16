@@ -5,17 +5,34 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-posts = [{:user => 'Robert', :content => 'A post by Robert'},
-         {:user => 'Anna', :content => 'A post by Anna'},
-         {:user => 'Evelyn', :content => 'A post by Evelyn'},
-         {:user => 'Johnson', :content => 'A post by Johnson'},
-         {:user => 'Dwight', :content => 'A post by Dwight'}
+posts = [{:user_id => 30, :user => 'Robert', :content => 'A post by Robert'},
+         {:user_id => 40, :user => 'Anna', :content => 'A post by Anna'},
+         {:user_id => 50, :user => 'Evelyn', :content => 'A post by Evelyn'},
+         {:user_id => 60, :user => 'Johnson', :content => 'A post by Johnson'},
+         {:user_id => 70, :user => 'Dwight', :content => 'A post by Dwight'}
 ]
 
-comments = [{:post_id => 1, :user => 'Anna', :content => 'Robert, cannot agree more about that'},
-            {:post_id => 1, :user => 'Evelyn', :content => '+1'},
-            {:post_id => 1, :user => 'Johnson', :content => 'LOL'}
-            ]
+comments = [{:user_id => 40, :post_id => 1, :user => 'Anna', :content => 'Robert, cannot agree more about that'},
+            {:user_id => 50, :post_id => 1, :user => 'Evelyn', :content => '+1'},
+            {:user_id => 60, :post_id => 1, :user => 'Johnson', :content => 'LOL'}
+]
+
+profiles = [{:user_id => 30, :bio => 'Bio of Robert'},
+            {:user_id => 40, :bio => 'Bio of Anna'},
+            {:user_id => 50, :bio => 'Bio of Evelyn'},
+            {:user_id => 60, :bio => 'Bio of Johnson'},
+            {:user_id => 70, :bio => 'Bio of Dwight'}
+]
+
+users = [{:id => 30, :name => 'Robert', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+         {:id => 40, :name => 'Anna', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+         {:id => 50, :name => 'Evelyn', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+         {:id => 60, :name => 'Johnson', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+         {:id => 70, :name => 'Dwight', :email => 'xxx@columbia.edu', :google_token => "", :google_refresh_token => ""},
+]
+users.each do |user|
+  User.create!(user)
+end
 
 posts.each do |post|
   Post.create!(post)
@@ -24,3 +41,10 @@ end
 comments.each do |comment|
   Comment.create!(comment)
 end
+
+profiles.each do |profile|
+  Profile.create!(profile)
+end
+
+
+

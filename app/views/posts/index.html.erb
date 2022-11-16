@@ -26,6 +26,9 @@
   </style>
 </head>
 <h1>Posts</h1>
+<div class="btn btn-primary">
+  <%= link_to "Go Back", root_path, :method => :get, :class => "link"%>
+</div>
 <p class="new_post">
   Create A New Post
 </p>
@@ -45,7 +48,7 @@
   <% @posts.each do |post| %>
     <tr>
       <td>
-        <%= post.user %>
+        <%= link_to post.user, display_profile_path(post.user_id), :method => :get, :class => "link" %>
       </td>
       <td>
         <%= link_to post.content, show_post_path(post), :method => :get, :class => "link" %>

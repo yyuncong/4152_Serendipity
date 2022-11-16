@@ -1,7 +1,7 @@
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
-      .post_user{
+      .profile_section{
           font-family: "Sans-serif", "Arial", monospace;
           font-weight: bold;
           font-size: 20px;
@@ -11,7 +11,7 @@
           color: black;
           text-decoration: none;
       }
-      .post_content{
+      .profile_content{
           font-family: "Sans-serif", "Arial", monospace;
           font-size: 20px;
       }
@@ -24,51 +24,43 @@
 
   </style>
 </head>
-<h1>Post</h1>
+<h1><%= @user.name + "'s profile page" %></h1>
 <div class="btn btn-primary">
   <%= link_to "Go Back", posts_path, :method => :get, :class => "link"%>
 </div>
-<p class="post_user">
-  <%= @post.user + " says"%>
+<p class="profile_section">
+  <%= @user.name + "'s email"%>
 </p>
-<p class="post_content">
-  <%= @post.content %>
+<p class="profile_content">
+  <%= @user.email %>
+</p>
+<p class="profile_section">
+  <%= @user.name + "'s bio"%>
+</p>
+<p class="profile_content">
+  <%= @profile.bio %>
 </p>
 <p class="comments_section_title">
-Comments
+  Posts
 </p>
 
 <table class="table table-striped col-md-12" id="post">
   <thead>
   <tr>
-    <th>User</th>
     <th>Content</th>
     <th>Last Updated Time</th>
   </tr>
   </thead>
   <tbody>
-  <% @comments.each do |comment| %>
+  <% @posts.each do |post| %>
     <tr>
       <td>
-        <%= comment.user %>
+        <%= post.content %>
       </td>
       <td>
-        <%= comment.content %>
-      </td>
-      <td>
-        <%= comment.updated_at %>
+        <%= post.updated_at %>
       </td>
     </tr>
   <% end %>
   </tbody>
 </table>
-<p class="comments_section_title">
-  Leave Your Comment
-</p>
-<%= form_tag update_post_path(@post.id), :class => 'form' do %>
-  <br/>
-  <%= label :comment, :content, 'Content', :class => 'col-form-label' %>
-  <%= text_field :comment, :content, :class => 'form-control' %>
-  <br/>
-  <%= submit_tag 'Comment', :class => 'btn btn-primary link' %>
-<% end %>
