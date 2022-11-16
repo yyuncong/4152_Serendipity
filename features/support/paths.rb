@@ -14,6 +14,8 @@ module NavigationHelpers
       case page_name
   
       when /^the home page$/ then '/'
+
+      when /^the new porfile page$/ then '/profile/new'  
         
       when /^the post page$/ then posts_path
   
