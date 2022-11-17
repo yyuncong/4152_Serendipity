@@ -46,7 +46,7 @@ bundle exec rspec
 ```
 
 ### Heroku Link
-#### https://infinite-cove-98165.herokuapp.com/
+#### https://secret-taiga-59469.herokuapp.com/
 
 
 ### GitHub Repo Link
