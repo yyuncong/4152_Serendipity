@@ -37,7 +37,7 @@ rails server -b 0.0.0.0
 ```
 And then the project can be accessed through http://localhost:3000/
 #### 4. Run cucumber and RSpec tests 
-Cucumber coverage for iteration 2 is 78.22%. 20% of the missing lines is caused by unable to proceeed with google authenticator, which requires typing in valid lionmail address and password. 
+Cucumber coverage for iteration 2 is 78.22%. More than 10% of the missing lines is caused by unable to proceeed with google authenticator, which requires typing in valid lionmail address and password. 
 ```sh
 bundle exec cucumber features/
 ```
