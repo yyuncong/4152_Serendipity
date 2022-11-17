@@ -8,7 +8,7 @@ describe PostsController, :type => :controller do
   before :each do
     @user = User.create!(:name => 't1', :email => 't1@columbia.edu' )
     @test_post = Post.create!(:user_id => @user.id, :content => 'hello')
-    
+    session[:uid] = @user.id
     #Group.create!(post_id: @test_post.id)
   end
   
@@ -29,16 +29,16 @@ describe PostsController, :type => :controller do
   
   
   describe "test update post" do
-    it 'calls the model method that update profile' do
+    it 'calls the model method that update post by adding a comment' do
       get :index
       
       url = "/post/#{@test_post.id}"
-      put :update, params: { post: {title: "Edit Post"}, id: @test_post.id}
-      new_post = Post.find_by_id(@test_post.id)
-      expect(new_post.title).to eq 'Edit Post'
+      put :update, params: { id: @test_post.id, comment: {content: "This is a comment"}}
+      new_comment = Comment.where("post_id = '#{@test_post.id}'")
+      expect(new_comment[0].content).to eq "This is a comment"
     end
   end
-  
+
   describe "go to new post page" do
      it "succeeds" do
          get :new
