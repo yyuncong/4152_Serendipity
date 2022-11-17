@@ -50,5 +50,6 @@ bundle exec rspec
 
 
 
+
 ### GitHub Repo Link
 #### https://github.com/yyuncong/4152_Serendipity
