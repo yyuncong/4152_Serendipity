@@ -8,7 +8,7 @@ describe PostsController, :type => :controller do
   before :each do
     @user = User.create!(:name => 't1', :email => 't1@columbia.edu' )
     @test_post = Post.create!(:user_id => @user.id, :content => 'hello')
-    
+    session[:uid] = 1
     #Group.create!(post_id: @test_post.id)
   end
   
