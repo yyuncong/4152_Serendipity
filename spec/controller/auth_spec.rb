@@ -36,4 +36,5 @@ describe SessionsController, :type => :controller do
     expect(users.length).to be > 0
   end
 
+
 end
