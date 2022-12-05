@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#logout'
 
+  # Posts
   get '/posts', to: 'posts#index', as: 'posts'
   post '/posts', to: 'posts#create', as: 'create_post'
   delete '/post/:id', to: 'posts#destroy', as: 'del_post'
@@ -36,4 +37,9 @@ Rails.application.routes.draw do
   post '/profile', to: 'profiles#create'
   put '/profile/:id', to: 'profiles#update', as: 'put_profile'
   get '/profile/:id', to: 'profiles#display', as: 'display_profile'
+
+  # likes
+  resources :posts do
+    resources :likes
+  end
 end
