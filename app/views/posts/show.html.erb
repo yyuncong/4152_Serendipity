@@ -26,7 +26,7 @@
 </head>
 <h1>Post</h1>
 <div class="btn btn-primary">
-  <%= link_to "Go Back", request.referrer, :class => "link"%>
+  <%= link_to "Go Back", posts_path, :method => :get, :class => "link"%>
 </div>
 <p class="post_user">
   <%= @post.user + " says"%>

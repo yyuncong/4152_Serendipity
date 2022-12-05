@@ -14,7 +14,7 @@ class LikesController < SessionsController
     else
       @post.likes.create(user_id: @current_user.id)
     end
-    redirect_to post_path(@post)
+    redirect_to show_post_path(@post)
   end
 
   def destroy
@@ -23,7 +23,7 @@ class LikesController < SessionsController
     else
       @like.destroy
     end
-    redirect_to post_path(@post)
+    redirect_to show_post_path(@post)
   end
 
   def find_like

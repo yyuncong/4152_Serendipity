@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 
   def self.all_post
     return Post
-    
+  end
   def self.posts_with_tag(tag)
     posts_with_tag = []
     Post.all.each do |post|
@@ -13,4 +13,5 @@ class Post < ActiveRecord::Base
     end
     return posts_with_tag
   end
+
 end
