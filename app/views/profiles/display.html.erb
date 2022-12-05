@@ -55,7 +55,7 @@
   <% @posts.each do |post| %>
     <tr>
       <td>
-        <%= post.content %>
+        <%= link_to post.content, show_post_path(post), :method => :get, :class => "link" %>
       </td>
       <td>
         <%= post.updated_at %>

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   post '/post/:id', to: 'posts#update', as: 'update_post'
   get '/posts/new', to: 'posts#new', as: 'new_post'
   get '/post/:id', to: 'posts#show', as: 'show_post'
+  get '/posts/:tag', to: 'posts#show_tag_posts', as: 'show_tag_posts'
   
   # /profiles
   get '/profile', to: 'profiles#show', as: 'profile'
