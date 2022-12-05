@@ -10,7 +10,7 @@
 </head>
 <h1>Complete Your Profile</h1>
 <div class="btn btn-primary">
-  <%= link_to "Go Back", root_path, :method => :get, :class => "link"%>
+  <%= link_to "Go Back", request.referrer, :class => "link"%>
 </div>
 <%= form_tag put_profile_path(@profile), :method => :put, :class => 'form' do %>
   <%= label nil, nil, 'Name', :class => 'col-form-label' %>

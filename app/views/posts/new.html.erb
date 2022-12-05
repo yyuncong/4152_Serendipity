@@ -10,12 +10,15 @@
 </head>
 <h1>Create a new post</h1>
 <div class="btn btn-primary">
-  <%= link_to "Go Back", posts_path, :method => :get, :class => "link"%>
+  <%= link_to "Go Back", request.referrer, :class => "link"%>
 </div>
 <%= form_tag posts_path, :class => 'form' do %>
   <br/>
   <%= label :post, :content, 'Content', :class => 'col-form-label' %>
   <%= text_field :post, :content, :class => 'form-control' %>
+  <br/>
+  <%= label :post, :content, 'Tags (please split tags with comma)', :class => 'col-form-label' %>
+  <%= text_field :post, :tags, :class => 'form-control' %>
   <br/>
   <%= submit_tag 'Post', :class => 'btn btn-primary link' %>
 <% end %>

@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-posts = [{:user_id => 30, :user => 'Robert', :content => 'A post by Robert'},
-         {:user_id => 40, :user => 'Anna', :content => 'A post by Anna'},
-         {:user_id => 50, :user => 'Evelyn', :content => 'A post by Evelyn'},
-         {:user_id => 60, :user => 'Johnson', :content => 'A post by Johnson'},
-         {:user_id => 70, :user => 'Dwight', :content => 'A post by Dwight'}
+posts = [{:user_id => 30, :user => 'Robert', :content => 'A post by Robert', :tags=> 'tag1 tag2'},
+         {:user_id => 40, :user => 'Anna', :content => 'A post by Anna', :tags=> 'tag2 tag3'},
+         {:user_id => 50, :user => 'Evelyn', :content => 'A post by Evelyn', :tags=> 'tag3 tag4'},
+         {:user_id => 60, :user => 'Johnson', :content => 'A post by Johnson', :tags=> 'tag4 tag5'},
+         {:user_id => 70, :user => 'Dwight', :content => 'A post by Dwight', :tags=> 'tag5 tag6'}
 ]
 
 comments = [{:user_id => 40, :post_id => 1, :user => 'Anna', :content => 'Robert, cannot agree more about that'},

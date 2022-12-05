@@ -25,15 +25,9 @@
       }
   </style>
 </head>
-<h1>All Posts</h1>
+<h1><%= "Posts with tag " + @tag %></h1>
 <div class="btn btn-primary">
-  <%= link_to "Go Back", root_path, :method => :get, :class => "link"%>
-</div>
-<p class="new_post">
-  Create A New Post
-</p>
-<div class="btn btn-primary">
-  <%= link_to "New Post", posts_new_path, :method => :get, :class => "link"%>
+  <%= link_to "Go Back", request.referrer, :class => "link"%>
 </div>
 <br/>
 <table class="table table-striped col-md-12" id="post">
