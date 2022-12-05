@@ -35,10 +35,15 @@ class PostsController < ApplicationController
   def destroy
   end
 
+  def show_tag_posts
+    @posts = Post.posts_with_tag(params[:tag])
+    @tag = params[:tag]
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :tags)
   end
 
   def comment_params

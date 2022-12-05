@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2022_12_05_073654) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "tags"
   end
 
   create_table "profiles", force: :cascade do |t|
