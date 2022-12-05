@@ -23,9 +23,9 @@ class SessionsController < ApplicationController
     end
     
     def logout
-        reset_session
-        @current_user = nil
-        render 'index'
+      reset_session
+      @current_user = nil
+      render 'index'
     end 
       
     def index

@@ -43,6 +43,7 @@
     <th>Content</th>
     <th>Tags</th>
     <th>Last Updated Time</th>
+    <th>Likes</th>
   </tr>
   </thead>
   <tbody>
@@ -61,6 +62,9 @@
       </td>
       <td>
         <%= post.updated_at %>
+      </td>
+      <td>
+        <p><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
       </td>
     </tr>
   <% end %>

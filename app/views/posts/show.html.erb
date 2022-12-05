@@ -34,6 +34,15 @@
 <p class="post_content">
   <%= @post.content %>
 </p>
+<p>
+  <% pre_like = @post.likes.find { |like| like.user_id == session[:uid]} %>
+  <% if pre_like %>
+    <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+  <% end %>
+  <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+</p>
 <p class="comments_section_title">
 Comments
 </p>
