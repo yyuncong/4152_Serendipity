@@ -54,6 +54,6 @@ And then the project can be accessed through http://localhost:3000/
 #### https://docs.google.com/presentation/d/1pHG_epc21LbYxjBKbvG2G1rwuPMUcBcIwPWQILxyK4Y/edit#slide=id.p1
 
 ### Youtube Link
-#### 
+#### https://www.youtube.com/watch?v=ths-LZDPQRU
 
 
