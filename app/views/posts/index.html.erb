@@ -56,7 +56,7 @@
         <%= link_to post.content, show_post_path(post), :method => :get, :class => "link" %>
       </td>
       <td>
-        <% ((post.tags).split(" ")).each do |tag| %>
+        <% ((post.tags).split(', ')).each do |tag| %>
           <%= link_to tag, show_tag_posts_path(tag), :method => :get, :class => "link" %>
         <% end %>
       </td>
