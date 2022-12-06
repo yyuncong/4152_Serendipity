@@ -39,19 +39,10 @@ bundle exec rake db:seed
 rails server -b 0.0.0.0
 ```
 And then the project can be accessed through http://localhost:3000/
-#### 4. Run cucumber and RSpec tests 
-Cucumber coverage for iteration 2 is 78.22%. More than 10% of the missing lines is caused by unable to proceeed with google authenticator, which requires typing in valid lionmail address and password. 
-<img width="1892" alt="coverage" src="https://user-images.githubusercontent.com/49266951/202354332-9388c963-a17c-43e8-8cff-2fe43c9ab9f4.png">
-```sh
-bundle exec cucumber features/
-```
-```sh
-bundle exec rspec
-```
+
 
 ### Heroku Link
 #### https://secret-taiga-59469.herokuapp.com/
-
 
 
 
