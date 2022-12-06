@@ -47,6 +47,13 @@ And then the project can be accessed through http://localhost:3000/
 #### https://secret-taiga-59469.herokuapp.com/
 
 
-
 ### GitHub Repo Link
 #### https://github.com/yyuncong/4152_Serendipity
+
+### Presentation Slides
+#### https://docs.google.com/presentation/d/1pHG_epc21LbYxjBKbvG2G1rwuPMUcBcIwPWQILxyK4Y/edit#slide=id.p1
+
+### Youtube Link
+#### 
+
+
