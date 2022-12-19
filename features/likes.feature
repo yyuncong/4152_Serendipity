@@ -15,6 +15,7 @@ Background: Test user make a test post
 Scenario: Test user like a post and unlike it 
   Given I am on the post page
   Then I should see "Test Post"
+  And I should see "0 Likes"  
   And I follow "Test Post"
   Then I should see "Like"
 
