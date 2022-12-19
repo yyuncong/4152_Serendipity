@@ -38,10 +38,5 @@ describe PostsController,  :type => :controller do
       expect(response.body).to include 'tag_b'
     end
   end
-   
-
-
-
-
 
 end
