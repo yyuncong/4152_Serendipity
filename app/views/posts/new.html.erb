@@ -12,13 +12,18 @@
 <div class="btn btn-primary">
   <%= link_to "Go Back", request.referrer, :class => "link"%>
 </div>
-<%= form_tag posts_path, :class => 'form' do %>
+
+<%= form_tag posts_path, :class => 'form', multipart: true do %>
   <br/>
   <%= label :post, :content, 'Content', :class => 'col-form-label' %>
   <%= text_field :post, :content, :class => 'form-control' %>
   <br/>
   <%= label :post, :content, 'Tags (please split tags with a comma and a white space)', :class => 'col-form-label' %>
   <%= text_field :post, :tags, :class => 'form-control' %>
+  <br/>
+  <br/>
+  <%= label :post, :image, 'File Upload', :class => 'col-form-label' %>
+  <%= file_field :post, :image, :class => 'form-control' %>
   <br/>
   <%= submit_tag 'Post', :class => 'btn btn-primary link' %>
 <% end %>
