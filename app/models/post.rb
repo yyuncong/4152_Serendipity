@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   has_many :likes, dependent: :destroy
+  has_one_attached :image, :dependent => :destroy
 
   def self.all_post
     return Post
