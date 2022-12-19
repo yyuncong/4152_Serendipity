@@ -7,7 +7,7 @@ describe PostsController, :type => :controller do
     
   before :each do
     @user = User.create!(:name => 't1', :email => 't1@columbia.edu' )
-    @test_post = Post.create!(:user_id => @user.id, :content => 'hello', :user => "test_user")
+    @test_post = Post.create!(:user_id => @user.id, :content => 'hello', :user => "test_user", :tags => "test_tag")
     session[:uid] = @user.id
     #Group.create!(post_id: @test_post.id)
   end
@@ -38,6 +38,8 @@ describe PostsController, :type => :controller do
       expect(new_comment[0].content).to eq "This is a comment"
     end
   end
+
+
 
   describe "go to new post page" do
      it "succeeds" do
