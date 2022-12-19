@@ -19,6 +19,7 @@ describe PostsController, :type => :controller do
     end
   end 
   
+  
   describe "test edit post" do
     it "successeds" do
     #url="/post/#{@test_post.id}"   
