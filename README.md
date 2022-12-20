@@ -25,6 +25,9 @@ create a new post. After a new post is created, the page will be redirected back
  In the current iteration, we implemented likes and tags features. Users can include tag in their posts and they can check posts under certain tags. Users can also like posts. All the tags and likes information are stored in our database. We also implemented prototype of audio and picture uploading. 
 ### How to Run the Project and Test
 
+### Proj Launch
+ In the last iteration of our project, we implemented the picture feature. Now when a user creates a new post, he can choose to attach a picture to the post. When the post with a picture attched is showed, other users can see the attched picture. The picture feature makes our app more interesting and convinient for users to use. 
+
 #### 1. Bundle install required packages
 ```sh
 bundle install --without production
@@ -46,13 +49,6 @@ And then the project can be accessed through http://localhost:3000/
 ### Heroku Link
 #### https://secret-taiga-59469.herokuapp.com/
 
-
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 38205750928022e2fdc3c520702d3a8a4a465fb1
 ### GitHub Repo Link
 #### https://github.com/yyuncong/4152_Serendipity
 
