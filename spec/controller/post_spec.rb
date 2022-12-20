@@ -7,7 +7,7 @@ describe PostsController, :type => :controller do
     
   before :each do
     @user = User.create!(:name => 't1', :email => 't1@columbia.edu' )
-    @test_post = Post.create!(:user_id => @user.id, :content => 'hello', :user => "test_user", :tags => "test_tag")
+    @test_post = Post.create!(:user_id => @user.id, :content => 'hello', :user => "test_user", :tags => "tag")
     session[:uid] = @user.id
     #Group.create!(post_id: @test_post.id)
   end
@@ -72,5 +72,17 @@ describe PostsController, :type => :controller do
       expect(response.body).to include 'test comment'
     end
   end
-   
+
+
+  describe " show posts which have tag test_tag" do
+    it 'find all posts with tag test_tag' do
+      @test_post2 = Post.create!(:user_id => @user.id, :content => 'hello2', :user => "test_user2", :tags => "tag")
+      @test_post3 = Post.create!(:user_id => @user.id, :content => 'hello3', :user => "test_user3", :tags => "tag")
+      posts_with_tag = Post.posts_with_tag("tag")
+      expect(posts_with_tag.length()).to eq(3)
+      #get :show_tag_posts, params: {tag: @test_post.tags}
+      # expect(response.body).to include 'hello'
+    end
+  end
+
 end

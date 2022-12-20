@@ -2,9 +2,6 @@ class Post < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_one_attached :image, :dependent => :destroy
 
-  def self.all_post
-    return Post
-  end
   def self.posts_with_tag(tag)
     posts_with_tag = []
     Post.all.each do |post|

@@ -28,7 +28,6 @@ class PostsController < ApplicationController
     @comment = Comment.create!(comment_params.merge({user_id: session[:uid], user: @user[:name], post_id: params[:id]}))
     @post = Post.find(params[:id])
     @comments = Comment.where("post_id = '#{params[:id]}'")
-
     redirect_to show_post_path(@post)
   end
 
